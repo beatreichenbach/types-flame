@@ -1,5 +1,5 @@
 [project]
-name = "flame-stubs"
+name = "types-flame"
 description = "Python stubs for the Autodesk Flame Python API"
 version = "2024.2.0"
 authors = [
