@@ -1,0 +1,31 @@
+[project]
+name = "flame-stubs"
+description = "Python stubs for the Autodesk Flame Python API"
+version = "2024.2.0"
+authors = [
+    {name = "Beat Reichenbach", email = "beatreichenbach@users.noreply.github.com"},
+]
+readme = "README.md"
+requires-python = ">=3.9"
+
+keywords = ["types", "graphics", "VFX"]
+
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+    "Intended Audience :: Developers",
+    "Typing :: Stubs Only",
+]
+
+[project.optional-dependencies]
+dev = ["black>=24.0"]
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["flame-stubs"]
+
+[tool.black]
+skip-string-normalization = true
