@@ -12,7 +12,7 @@ import flame
 
 def app_initialized(project_name: str) -> None:
     package_dir = os.path.dirname(os.path.dirname(__file__))
-    output_dir = os.path.join(package_dir, 'stubs')
+    output_dir = os.path.join(package_dir, 'flame-stubs')
     generate_stub(flame, output_dir)
 
 
