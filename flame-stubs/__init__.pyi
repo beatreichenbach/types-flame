@@ -1,15 +1,15 @@
 from typing import Any, overload
 
 
-batch = ...
-browser = ...
-media_panel = ...
-mediahub = ...
-messages = ...
-project = ...
-projects = ...
-timeline = ...
-users = ...
+batch: PyBatch = ...
+browser: PyBrowser = ...
+media_panel: PyMediaPanel = ...
+mediahub: PyMediaHub = ...
+messages: PyMessages = ...
+project: PyProjectSelector = ...
+projects: PyProjectSelector = ...
+timeline: PyTimeline = ...
+users: PyUsers = ...
 
 class PyActionFamilyNode(PyNode):
     """
@@ -40,7 +40,7 @@ class PyActionFamilyNode(PyNode):
         """
         ...
 
-    def connect_nodes(arg1: PyActionFamilyNode, parent_node: PyFlameObject, child_node: PyFlameObject, link_type: str='Default') -> bool:
+    def connect_nodes(arg1: PyActionFamilyNode, parent_node: PyFlameObject, child_node: PyFlameObject, link_type: str = 'Default') -> bool:
         """
         Connect two nodes in the Action/Image/GMaskTracer schematic.
         Keyword argument:
@@ -48,7 +48,7 @@ class PyActionFamilyNode(PyNode):
         """
         ...
 
-    def create_node(arg1: PyActionFamilyNode, node_type: str, file_path: str='', is_udim: bool=False, tile_resolution: int=0) -> Any:
+    def create_node(arg1: PyActionFamilyNode, node_type: str, file_path: str = '', is_udim: bool = False, tile_resolution: int = 0) -> Any:
         """
         Add an Action/Image/GMaskTracer object node to the Action/Image/GMaskTracer schematic.
         Keyword argument:
@@ -56,13 +56,13 @@ class PyActionFamilyNode(PyNode):
         """
         ...
 
-    def delete(arg1: PyFlameObject, confirm: bool=True) -> bool:
+    def delete(arg1: PyFlameObject, confirm: bool = True) -> bool:
         """
         Delete the node.
         """
         ...
 
-    def disconnect_nodes(arg1: PyActionFamilyNode, parent_node: PyFlameObject, child_node: PyFlameObject, link_type: str='Default') -> bool:
+    def disconnect_nodes(arg1: PyActionFamilyNode, parent_node: PyFlameObject, child_node: PyFlameObject, link_type: str = 'Default') -> bool:
         """
         Disconnect two nodes in the Action/Image/GMaskTracer schematic.
         Keyword argument:
@@ -70,7 +70,7 @@ class PyActionFamilyNode(PyNode):
         """
         ...
 
-    def duplicate(arg1: PyNode, keep_node_connections: bool=False) -> Any:
+    def duplicate(arg1: PyNode, keep_node_connections: bool = False) -> Any:
         """
         Duplicate the node.
         """
@@ -109,7 +109,7 @@ class PyActionFamilyNode(PyNode):
         """
         ...
 
-    def set_context(arg1: PyNode, index: int, socket_name: str='Default') -> bool:
+    def set_context(arg1: PyNode, index: int, socket_name: str = 'Default') -> bool:
         """
         Set a Context view on a Node socket. An index and a socket name must be defined as arguments.
         """
@@ -154,7 +154,7 @@ class PyActionNode(PyActionFamilyNode):
         """
         ...
 
-    def connect_nodes(arg1: PyActionFamilyNode, parent_node: PyFlameObject, child_node: PyFlameObject, link_type: str='Default') -> bool:
+    def connect_nodes(arg1: PyActionFamilyNode, parent_node: PyFlameObject, child_node: PyFlameObject, link_type: str = 'Default') -> bool:
         """
         Connect two nodes in the Action/Image/GMaskTracer schematic.
         Keyword argument:
@@ -162,7 +162,7 @@ class PyActionNode(PyActionFamilyNode):
         """
         ...
 
-    def create_node(arg1: PyActionFamilyNode, node_type: str, file_path: str='', is_udim: bool=False, tile_resolution: int=0) -> Any:
+    def create_node(arg1: PyActionFamilyNode, node_type: str, file_path: str = '', is_udim: bool = False, tile_resolution: int = 0) -> Any:
         """
         Add an Action/Image/GMaskTracer object node to the Action/Image/GMaskTracer schematic.
         Keyword argument:
@@ -170,7 +170,7 @@ class PyActionNode(PyActionFamilyNode):
         """
         ...
 
-    def delete(arg1: PyFlameObject, confirm: bool=True) -> bool:
+    def delete(arg1: PyFlameObject, confirm: bool = True) -> bool:
         """
         Delete the node.
         """
@@ -184,7 +184,7 @@ class PyActionNode(PyActionFamilyNode):
         """
         ...
 
-    def disconnect_nodes(arg1: PyActionFamilyNode, parent_node: PyFlameObject, child_node: PyFlameObject, link_type: str='Default') -> bool:
+    def disconnect_nodes(arg1: PyActionFamilyNode, parent_node: PyFlameObject, child_node: PyFlameObject, link_type: str = 'Default') -> bool:
         """
         Disconnect two nodes in the Action/Image/GMaskTracer schematic.
         Keyword argument:
@@ -192,7 +192,7 @@ class PyActionNode(PyActionFamilyNode):
         """
         ...
 
-    def duplicate(arg1: PyNode, keep_node_connections: bool=False) -> Any:
+    def duplicate(arg1: PyNode, keep_node_connections: bool = False) -> Any:
         """
         Duplicate the node.
         """
@@ -215,7 +215,7 @@ class PyActionNode(PyActionFamilyNode):
         """
         ...
 
-    def export_fbx(arg1: PyActionFamilyNode, file_path: str, only_selected_nodes: bool=False, pixel_to_units: float=0.10000000149011612, frame_rate: str='23.976 fps', bake_animation: bool=False, export_axes: bool=True, export_point_locators: bool=False, combine_material: bool=True, duplicate_material: bool=False) -> bool:
+    def export_fbx(arg1: PyActionFamilyNode, file_path: str, only_selected_nodes: bool = False, pixel_to_units: float = 0.10000000149011612, frame_rate: str = '23.976 fps', bake_animation: bool = False, export_axes: bool = True, export_point_locators: bool = False, combine_material: bool = True, duplicate_material: bool = False) -> bool:
         """
         Export Action nodes to an FBX file.
         Keyword argument:
@@ -229,7 +229,7 @@ class PyActionNode(PyActionFamilyNode):
         """
         ...
 
-    def import_abc(arg1: PyActionFamilyNode, file_path: str, lights: bool=True, cameras: bool=True, models: bool=True, normals: bool=True, mesh_animations: bool=True, frame_rate: str='23.976 fps', auto_fit: bool=False, unit_to_pixels: float=10.0, consolidate_geometry: bool=True, create_object_group: bool=False) -> list:
+    def import_abc(arg1: PyActionFamilyNode, file_path: str, lights: bool = True, cameras: bool = True, models: bool = True, normals: bool = True, mesh_animations: bool = True, frame_rate: str = '23.976 fps', auto_fit: bool = False, unit_to_pixels: float = 10.0, consolidate_geometry: bool = True, create_object_group: bool = False) -> list:
         """
         Import an Alembic (ABC) file into the Action schematic using the Action Objects mode.
         Keyword argument:
@@ -237,7 +237,7 @@ class PyActionNode(PyActionFamilyNode):
         """
         ...
 
-    def import_fbx(arg1: PyActionFamilyNode, file_path: str, lights: bool=True, cameras: bool=True, models: bool=True, normals: bool=True, mesh_animations: bool=True, keep_frame_rate: bool=True, bake_animation: bool=False, object_properties: bool=True, auto_fit: bool=False, unit_to_pixels: float=10.0, create_media: bool=True, is_udim: bool=False, relink_material: bool=True) -> list:
+    def import_fbx(arg1: PyActionFamilyNode, file_path: str, lights: bool = True, cameras: bool = True, models: bool = True, normals: bool = True, mesh_animations: bool = True, keep_frame_rate: bool = True, bake_animation: bool = False, object_properties: bool = True, auto_fit: bool = False, unit_to_pixels: float = 10.0, create_media: bool = True, is_udim: bool = False, relink_material: bool = True) -> list:
         """
         Import an FBX file into the Action schematic using the Action Objects mode.
         Keyword argument:
@@ -257,7 +257,7 @@ class PyActionNode(PyActionFamilyNode):
         """
         ...
 
-    def read_abc(arg1: PyActionFamilyNode, file_path: str, lights: bool=True, cameras: bool=True, models: bool=True, normals: bool=True, mesh_animations: bool=True, frame_rate: str='23.976 fps', auto_fit: bool=False, unit_to_pixels: float=10.0, consolidate_geometry: bool=True, create_object_group: bool=False) -> Any:
+    def read_abc(arg1: PyActionFamilyNode, file_path: str, lights: bool = True, cameras: bool = True, models: bool = True, normals: bool = True, mesh_animations: bool = True, frame_rate: str = '23.976 fps', auto_fit: bool = False, unit_to_pixels: float = 10.0, consolidate_geometry: bool = True, create_object_group: bool = False) -> Any:
         """
         Import an Alembic (ABC) file into the Action schematic using the Read File mode.
         Keyword argument:
@@ -265,7 +265,7 @@ class PyActionNode(PyActionFamilyNode):
         """
         ...
 
-    def read_fbx(arg1: PyActionFamilyNode, file_path: str, lights: bool=True, cameras: bool=True, models: bool=True, normals: bool=True, mesh_animations: bool=True, keep_frame_rate: bool=True, bake_animation: bool=False, object_properties: bool=True, auto_fit: bool=False, unit_to_pixels: float=10.0, is_udim: bool=False, relink_material: bool=True) -> Any:
+    def read_fbx(arg1: PyActionFamilyNode, file_path: str, lights: bool = True, cameras: bool = True, models: bool = True, normals: bool = True, mesh_animations: bool = True, keep_frame_rate: bool = True, bake_animation: bool = False, object_properties: bool = True, auto_fit: bool = False, unit_to_pixels: float = 10.0, is_udim: bool = False, relink_material: bool = True) -> Any:
         """
         Import an FBX file into the Action schematic using the Read File mode.
         Keyword argument:
@@ -279,7 +279,7 @@ class PyActionNode(PyActionFamilyNode):
         """
         ...
 
-    def set_context(arg1: PyNode, index: int, socket_name: str='Default') -> bool:
+    def set_context(arg1: PyNode, index: int, socket_name: str = 'Default') -> bool:
         """
         Set a Context view on a Node socket. An index and a socket name must be defined as arguments.
         """
@@ -326,7 +326,7 @@ class PyArchiveEntry(PyFlameObject):
 
 class PyAttribute:
     """
-    <property object at 0x7f1c32738450>
+    <property object at 0x7f00d60c7bf0>
     """
     values = ...
 
@@ -497,7 +497,7 @@ class PyAudioTrack(PyFlameObject):
     def __setattr__(arg1: PyFlameObject, arg2: str, arg3: Any) -> None:
         ...
 
-    def copy_to_media_panel(arg1: PyAudioTrack, destination: PyArchiveEntry, duplicate_action: str='add') -> Any:
+    def copy_to_media_panel(arg1: PyAudioTrack, destination: PyArchiveEntry, duplicate_action: str = 'add') -> Any:
         """
         Create a new clip with a copy of the PyObject.
         """
@@ -527,7 +527,7 @@ class PyBatch(PyFlameObject):
     def __setattr__(arg1: PyFlameObject, arg2: str, arg3: Any) -> None:
         ...
 
-    def append_setup(arg1: PyBatch, setup_path: str, confirm: bool=True) -> bool:
+    def append_setup(arg1: PyBatch, setup_path: str, confirm: bool = True) -> bool:
         """
         Append a Batch setup file to the existing Batch setup.
         Keywords arguments:
@@ -548,7 +548,7 @@ class PyBatch(PyFlameObject):
         """
         ...
 
-    def clear(arg1: PyBatch, confirm: bool=True) -> bool:
+    def clear(arg1: PyBatch, confirm: bool = True) -> bool:
         """
         Clear the Batch Group.
         """
@@ -579,7 +579,7 @@ class PyBatch(PyFlameObject):
         """
         ...
 
-    def connect_nodes(arg1: PyBatch, output_node: PyNode, output_socket_name: str='Default', input_node: PyNode  = None, input_socket_name: str='Default') -> bool:
+    def connect_nodes(arg1: PyBatch, output_node: PyNode, output_socket_name: str = 'Default', input_node: PyNode  = None, input_socket_name: str = 'Default') -> bool:
         """
         Connect two nodes in the Batch schematic.
         Keyword arguments:
@@ -590,7 +590,7 @@ class PyBatch(PyFlameObject):
         """
         ...
 
-    def create_batch_group(arg1: PyBatch, name: str, nb_reels: int=4, nb_shelf_reels: int=1, reels: list=None, shelf_reels: list=None, start_frame: int=1, duration: Any=None) -> Any:
+    def create_batch_group(arg1: PyBatch, name: str, nb_reels: int = 4, nb_shelf_reels: int = 1, reels: list = None, shelf_reels: list = None, start_frame: int = 1, duration: Any = None) -> Any:
         """
         Create a new Batch Group object in the Desktop catalogue.
         Keyword arguments:
@@ -604,7 +604,7 @@ class PyBatch(PyFlameObject):
         """
         ...
 
-    def create_node(arg1: PyBatch, node_type: str, file_path: str='') -> Any:
+    def create_node(arg1: PyBatch, node_type: str, file_path: str = '') -> Any:
         """
         Create a Batch node object in the Batch schematic.
          Keyword argument:
@@ -624,7 +624,7 @@ class PyBatch(PyFlameObject):
         """
         ...
 
-    def disconnect_node(arg1: PyBatch, node: PyNode, input_socket_name: str='') -> bool:
+    def disconnect_node(arg1: PyBatch, node: PyNode, input_socket_name: str = '') -> bool:
         """
         Disconnect the input links of a given node, given an input socket.
         Keyword arguments:
@@ -689,7 +689,7 @@ class PyBatch(PyFlameObject):
         """
         ...
 
-    def iterate(arg1: PyBatch, index: int=-1) -> Any:
+    def iterate(arg1: PyBatch, index: int = -1) -> Any:
         """
         Iterate the current Batch Setup, creating a new iteration named BatchSetupName_X, where X is the Batch Iteration's index, and starts at 001.
          Keyword argument:
@@ -720,7 +720,7 @@ class PyBatch(PyFlameObject):
         """
         ...
 
-    def open_as_batch_group(arg1: PyBatch, confirm: bool=True) -> bool:
+    def open_as_batch_group(arg1: PyBatch, confirm: bool = True) -> bool:
         """
         Open a Batch Group as a new Batch Group, adding it to PyDesktop.batch_groups. Can only be called from a Library.
         """
@@ -732,7 +732,7 @@ class PyBatch(PyFlameObject):
         """
         ...
 
-    def render(arg1: PyBatch, render_option: str='Foreground', generate_proxies: bool=False, include_history: bool=False) -> bool:
+    def render(arg1: PyBatch, render_option: str = 'Foreground', generate_proxies: bool = False, include_history: bool = False) -> bool:
         """
         Trigger the rendering of the Batch Group setup. Every active Render and Write File nodes render. If specified render_option is not supported by the workstation, returns an error.
         Keyword arguments:
@@ -742,7 +742,7 @@ class PyBatch(PyFlameObject):
         """
         ...
 
-    def replace_setup(arg1: PyBatch, batch_iteration: PyBatchIteration, confirm: bool=True) -> bool:
+    def replace_setup(arg1: PyBatch, batch_iteration: PyBatchIteration, confirm: bool = True) -> bool:
         """
         Replace the Batch Group setup with the specified Batch Iteration. Cannot be called on the Batch Group currently selected and displayed in the Batch view.
         """
@@ -823,7 +823,7 @@ class PyBatchIteration(PyArchiveEntry):
         """
         ...
 
-    def open_as_batch_group(arg1: PyBatchIteration, confirm: bool=True) -> bool:
+    def open_as_batch_group(arg1: PyBatchIteration, confirm: bool = True) -> bool:
         """
         Open a Batch Iteration as a new Batch Group, adding it to PyDesktop.batch_groups. Can only be called from a Library.
         """
@@ -847,7 +847,7 @@ class PyBrowser:
     sequence_mode = ...
     width = ...
 
-    def show(arg1: PyBrowser, default_path: str, extension: Any='', select_directory: bool=False, multi_selection: bool=False, include_resolution: Any=False, title: str='Load') -> None:
+    def show(arg1: PyBrowser, default_path: str, extension: Any = '', select_directory: bool = False, multi_selection: bool = False, include_resolution: Any = False, title: str = 'Load') -> None:
         """
         Show the file browser.Keyword arguments:
         default_path -- Set the path.
@@ -900,7 +900,7 @@ class PyClip(PyArchiveEntry):
     def __setattr__(arg1: PyFlameObject, arg2: str, arg3: Any) -> None:
         ...
 
-    def cache_media(arg1: PyClip, mode: str='current') -> bool:
+    def cache_media(arg1: PyClip, mode: str = 'current') -> bool:
         """
         Cache the Clip's linked media.
         Keyword argument:
@@ -916,7 +916,7 @@ class PyClip(PyArchiveEntry):
         """
         ...
 
-    def change_start_frame(arg1: PyClip, start_frame: int, use_segment_connections: bool=True) -> None:
+    def change_start_frame(arg1: PyClip, start_frame: int, use_segment_connections: bool = True) -> None:
         """
         Modify the start frame of a source Clip.
         Keywords argument:
@@ -956,7 +956,7 @@ class PyClip(PyArchiveEntry):
         """
         ...
 
-    def flush_cache_media(arg1: PyClip, mode: str='current') -> bool:
+    def flush_cache_media(arg1: PyClip, mode: str = 'current') -> bool:
         """
         Flush the Clip's media cache.
         Keyword argument:
@@ -970,7 +970,7 @@ class PyClip(PyArchiveEntry):
         """
         ...
 
-    def get_colour_space(arg1: PyClip, time: PyTime=None) -> str:
+    def get_colour_space(arg1: PyClip, time: PyTime = None) -> str:
         """
         Return the colour space at the requested time. Use current_time when no time is supplied.
         """
@@ -988,7 +988,7 @@ class PyClip(PyArchiveEntry):
         """
         ...
 
-    def is_rendered(arg1: PyClip, top_only: bool=False, render_quality: str='Full Resolution') -> bool:
+    def is_rendered(arg1: PyClip, top_only: bool = False, render_quality: str = 'Full Resolution') -> bool:
         """
         Return if a Clip is rendered.
         The following attributes can be defined: top_only, render_quality.
@@ -1007,7 +1007,7 @@ class PyClip(PyArchiveEntry):
         """
         ...
 
-    def reformat(arg1: PyClip, width: int=0, height: int=0, ratio: float=0.0, bit_depth: int=0, scan_mode: str='', frame_rate: str='', resize_mode: str='Letterbox') -> None:
+    def reformat(arg1: PyClip, width: int = 0, height: int = 0, ratio: float = 0.0, bit_depth: int = 0, scan_mode: str = '', frame_rate: str = '', resize_mode: str = 'Letterbox') -> None:
         """
         Reformat the Clip to the specified format.
         Keywords arguments:
@@ -1021,7 +1021,7 @@ class PyClip(PyArchiveEntry):
         """
         ...
 
-    def render(arg1: PyClip, render_mode: str='All', render_option: str='Foreground', render_quality: str='Full Resolution', effect_type: str='', effect_caching_mode: str='Current', include_handles: bool=False) -> bool:
+    def render(arg1: PyClip, render_mode: str = 'All', render_option: str = 'Foreground', render_quality: str = 'Full Resolution', effect_type: str = '', effect_caching_mode: str = 'Current', include_handles: bool = False) -> bool:
         """
         Trigger a render of the Clip
         The following attributes can be defined: render_mode, render_option, render_quality, effect_type, effect_caching_mode and include_handles.
@@ -1052,13 +1052,13 @@ class PyClipNode(PyNode):
     def __setattr__(arg1: PyFlameObject, arg2: str, arg3: Any) -> None:
         ...
 
-    def delete(arg1: PyFlameObject, confirm: bool=True) -> bool:
+    def delete(arg1: PyFlameObject, confirm: bool = True) -> bool:
         """
         Delete the node.
         """
         ...
 
-    def duplicate(arg1: PyNode, keep_node_connections: bool=False) -> Any:
+    def duplicate(arg1: PyNode, keep_node_connections: bool = False) -> Any:
         """
         Duplicate the node.
         """
@@ -1076,7 +1076,7 @@ class PyClipNode(PyNode):
         """
         ...
 
-    def set_context(arg1: PyNode, index: int, socket_name: str='Default') -> bool:
+    def set_context(arg1: PyNode, index: int, socket_name: str = 'Default') -> bool:
         """
         Set a Context view on a Node socket. An index and a socket name must be defined as arguments.
         """
@@ -1128,7 +1128,7 @@ class PyCoCameraAnalysis(PyCoNode):
         """
         ...
 
-    def children(arg1: PyCoNode, link_type: str='Default') -> list:
+    def children(arg1: PyCoNode, link_type: str = 'Default') -> list:
         """
         Return a list of PyCoNode objects that are the children of the action node.
         Keyword argument:
@@ -1136,7 +1136,7 @@ class PyCoCameraAnalysis(PyCoNode):
         """
         ...
 
-    def parents(arg1: PyCoNode, link_type: str='Default') -> list:
+    def parents(arg1: PyCoNode, link_type: str = 'Default') -> list:
         """
         Return a list of PyCoNode objects that are the parents of the action node.
         Keyword argument:
@@ -1191,7 +1191,7 @@ class PyCoCompass(PyCoNode):
         """
         ...
 
-    def children(arg1: PyCoNode, link_type: str='Default') -> list:
+    def children(arg1: PyCoNode, link_type: str = 'Default') -> list:
         """
         Return a list of PyCoNode objects that are the children of the action node.
         Keyword argument:
@@ -1199,7 +1199,7 @@ class PyCoCompass(PyCoNode):
         """
         ...
 
-    def parents(arg1: PyCoNode, link_type: str='Default') -> list:
+    def parents(arg1: PyCoNode, link_type: str = 'Default') -> list:
         """
         Return a list of PyCoNode objects that are the parents of the action node.
         Keyword argument:
@@ -1247,7 +1247,7 @@ class PyCoNode(PyFlameObject):
         """
         ...
 
-    def children(arg1: PyCoNode, link_type: str='Default') -> list:
+    def children(arg1: PyCoNode, link_type: str = 'Default') -> list:
         """
         Return a list of PyCoNode objects that are the children of the action node.
         Keyword argument:
@@ -1255,7 +1255,7 @@ class PyCoNode(PyFlameObject):
         """
         ...
 
-    def parents(arg1: PyCoNode, link_type: str='Default') -> list:
+    def parents(arg1: PyCoNode, link_type: str = 'Default') -> list:
         """
         Return a list of PyCoNode objects that are the parents of the action node.
         Keyword argument:
@@ -1281,13 +1281,13 @@ class PyCompassNode(PyNode):
     def __setattr__(arg1: PyFlameObject, arg2: str, arg3: Any) -> None:
         ...
 
-    def delete(arg1: PyFlameObject, confirm: bool=True) -> bool:
+    def delete(arg1: PyFlameObject, confirm: bool = True) -> bool:
         """
         Delete the node.
         """
         ...
 
-    def duplicate(arg1: PyNode, keep_node_connections: bool=False) -> Any:
+    def duplicate(arg1: PyNode, keep_node_connections: bool = False) -> Any:
         """
         Duplicate the node.
         """
@@ -1305,7 +1305,7 @@ class PyCompassNode(PyNode):
         """
         ...
 
-    def set_context(arg1: PyNode, index: int, socket_name: str='Default') -> bool:
+    def set_context(arg1: PyNode, index: int, socket_name: str = 'Default') -> bool:
         """
         Set a Context view on a Node socket. An index and a socket name must be defined as arguments.
         """
@@ -1340,7 +1340,7 @@ class PyDesktop(PyArchiveEntry):
         """
         ...
 
-    def create_batch_group(arg1: PyDesktop, name: str, nb_reels: int=4, nb_shelf_reels: int=1, reels: list=None, shelf_reels: list=None, start_frame: int=1, duration: Any=None) -> Any:
+    def create_batch_group(arg1: PyDesktop, name: str, nb_reels: int = 4, nb_shelf_reels: int = 1, reels: list = None, shelf_reels: list = None, start_frame: int = 1, duration: Any = None) -> Any:
         """
         Create a new Batch Group object in the Desktop catalogue.
         Keyword arguments:
@@ -1383,15 +1383,15 @@ class PyExporter:
     """
     Object holding export settings.
     """
-    Audio = ...
-    Autodesk = ...
-    Distribution_Package = ...
-    Image_Sequence = ...
-    Movie = ...
-    Project = ...
-    Sequence_Publish = ...
-    Shared = ...
-    Shotgun = ...
+    Audio: PresetType = ...
+    Autodesk: PresetVisibility = ...
+    Distribution_Package: PresetType = ...
+    Image_Sequence: PresetType = ...
+    Movie: PresetType = ...
+    Project: PresetVisibility = ...
+    Sequence_Publish: PresetType = ...
+    Shared: PresetVisibility = ...
+    Shotgun: PresetVisibility = ...
     export_all_subtitles = ...
     export_between_marks = ...
     export_subtitles_as_files = ...
@@ -1412,7 +1412,7 @@ class PyExporter:
     def __init__(arg1: Any) -> None:
         ...
 
-    def export(arg1: PyExporter, sources: Any, preset_path: str, output_directory: str, background_job_settings: BackgroundJobSettings=None, hooks: Any=None, hooks_user_data: Any=None) -> None:
+    def export(arg1: PyExporter, sources: Any, preset_path: str, output_directory: str, background_job_settings: BackgroundJobSettings = None, hooks: Any = None, hooks_user_data: Any = None) -> None:
         """
         Perform export.
         Keyword arguments:
@@ -1422,29 +1422,29 @@ class PyExporter:
         background_job_settings -- Settings of background job(s) created if any.
         hooks -- Export python hooks override. If passed, regular export python hooks implemented in exportHooks.py will be bypassed for this export and methods in the passed object with matching name will be called.
             Instance of object passed should implement the following signature:
-        
+
                 class PythonHookOverride(object):
                     def preExport(self, info, userData, *args, **kwargs)
                         pass
-        
+
                     def postExport(self, info, userData, *args, **kwargs):
                         pass
-        
+
                     def preExportSequence(self, info, userData, *args, **kwargs):
                         pass
-        
+
                     def postExportSequence(self, info, userData, *args, **kwargs):
                         pass
-        
+
                     def preExportAsset(self, info, userData, *args, **kwargs):
                         pass
-        
+
                     def postExportAsset(self, info, userData, *args, **kwargs):
                         pass
-        
+
                     def exportOverwriteFile(self, path, *args, **kwargs):
                         return "ask" # or "overwrite"
-        
+
         hooks_user_data -- User data object passed to the export python hooks. This object can be modified by the PythonHookOverride methods but cannot be re-assigned
         """
         ...
@@ -1498,7 +1498,7 @@ class PyFolder(PyArchiveEntry):
     def __setattr__(arg1: PyFlameObject, arg2: str, arg3: Any) -> None:
         ...
 
-    def clear(arg1: PyFolder, confirm: bool=True) -> bool:
+    def clear(arg1: PyFolder, confirm: bool = True) -> bool:
         """
         Clear the contents of the Folder object.
         """
@@ -1534,7 +1534,7 @@ class PyFolder(PyArchiveEntry):
         """
         ...
 
-    def create_sequence(arg1: PyFolder, name: str='Untitled Sequence', video_tracks: int=1, video_stereo: bool=False, width: int=1920, height: int=1080, ratio: float=1.7777777777777777, bit_depth: int=16, scan_mode: str='P', frame_rate: str='23.976 fps', start_at: Any=..., duration: Any=..., audio_tracks: int=1, audio_stereo: bool=True) -> Any:
+    def create_sequence(arg1: PyFolder, name: str = 'Untitled Sequence', video_tracks: int = 1, video_stereo: bool = False, width: int = 0, height: int = 0, ratio: float = 1.7777777777777777, bit_depth: int = 0, scan_mode: str = '', frame_rate: str = '???', start_at: Any = '00:00:00+00', duration: Any = '00:00:00+01', audio_tracks: int = 1, audio_stereo: bool = True) -> Any:
         """
         Create a Sequence in a PyReel, PyLibrary, PyFolder.
         Keywords arguments:
@@ -1595,7 +1595,7 @@ class PyGMaskTracerNode(PyActionFamilyNode):
         """
         ...
 
-    def connect_nodes(arg1: PyActionFamilyNode, parent_node: PyFlameObject, child_node: PyFlameObject, link_type: str='Default') -> bool:
+    def connect_nodes(arg1: PyActionFamilyNode, parent_node: PyFlameObject, child_node: PyFlameObject, link_type: str = 'Default') -> bool:
         """
         Connect two nodes in the Action/Image/GMaskTracer schematic.
         Keyword argument:
@@ -1603,7 +1603,7 @@ class PyGMaskTracerNode(PyActionFamilyNode):
         """
         ...
 
-    def create_node(arg1: PyActionFamilyNode, node_type: str, file_path: str='', is_udim: bool=False, tile_resolution: int=0) -> Any:
+    def create_node(arg1: PyActionFamilyNode, node_type: str, file_path: str = '', is_udim: bool = False, tile_resolution: int = 0) -> Any:
         """
         Add an Action/Image/GMaskTracer object node to the Action/Image/GMaskTracer schematic.
         Keyword argument:
@@ -1611,7 +1611,7 @@ class PyGMaskTracerNode(PyActionFamilyNode):
         """
         ...
 
-    def delete(arg1: PyFlameObject, confirm: bool=True) -> bool:
+    def delete(arg1: PyFlameObject, confirm: bool = True) -> bool:
         """
         Delete the node.
         """
@@ -1625,7 +1625,7 @@ class PyGMaskTracerNode(PyActionFamilyNode):
         """
         ...
 
-    def disconnect_nodes(arg1: PyActionFamilyNode, parent_node: PyFlameObject, child_node: PyFlameObject, link_type: str='Default') -> bool:
+    def disconnect_nodes(arg1: PyActionFamilyNode, parent_node: PyFlameObject, child_node: PyFlameObject, link_type: str = 'Default') -> bool:
         """
         Disconnect two nodes in the Action/Image/GMaskTracer schematic.
         Keyword argument:
@@ -1633,7 +1633,7 @@ class PyGMaskTracerNode(PyActionFamilyNode):
         """
         ...
 
-    def duplicate(arg1: PyNode, keep_node_connections: bool=False) -> Any:
+    def duplicate(arg1: PyNode, keep_node_connections: bool = False) -> Any:
         """
         Duplicate the node.
         """
@@ -1656,7 +1656,7 @@ class PyGMaskTracerNode(PyActionFamilyNode):
         """
         ...
 
-    def export_fbx(arg1: PyActionFamilyNode, file_path: str, only_selected_nodes: bool=False, pixel_to_units: float=0.10000000149011612, frame_rate: str='23.976 fps', bake_animation: bool=False, export_axes: bool=True, export_point_locators: bool=False, combine_material: bool=True, duplicate_material: bool=False) -> bool:
+    def export_fbx(arg1: PyActionFamilyNode, file_path: str, only_selected_nodes: bool = False, pixel_to_units: float = 0.10000000149011612, frame_rate: str = '23.976 fps', bake_animation: bool = False, export_axes: bool = True, export_point_locators: bool = False, combine_material: bool = True, duplicate_material: bool = False) -> bool:
         """
         Export GMask Tracer nodes to an FBX file.
         Keyword argument:
@@ -1670,7 +1670,7 @@ class PyGMaskTracerNode(PyActionFamilyNode):
         """
         ...
 
-    def import_abc(arg1: PyActionFamilyNode, file_path: str, lights: bool=True, cameras: bool=True, models: bool=True, normals: bool=True, mesh_animations: bool=True, frame_rate: str='23.976 fps', auto_fit: bool=False, unit_to_pixels: float=10.0, consolidate_geometry: bool=True, create_object_group: bool=False) -> list:
+    def import_abc(arg1: PyActionFamilyNode, file_path: str, lights: bool = True, cameras: bool = True, models: bool = True, normals: bool = True, mesh_animations: bool = True, frame_rate: str = '23.976 fps', auto_fit: bool = False, unit_to_pixels: float = 10.0, consolidate_geometry: bool = True, create_object_group: bool = False) -> list:
         """
         Import an Alembic (ABC) file into the GMask Tracer schematic using the GMask Tracer Objects mode.
         Keyword argument:
@@ -1678,7 +1678,7 @@ class PyGMaskTracerNode(PyActionFamilyNode):
         """
         ...
 
-    def import_fbx(arg1: PyActionFamilyNode, file_path: str, lights: bool=True, cameras: bool=True, models: bool=True, normals: bool=True, mesh_animations: bool=True, keep_frame_rate: bool=True, bake_animation: bool=False, object_properties: bool=True, auto_fit: bool=False, unit_to_pixels: float=10.0, create_media: bool=True, is_udim: bool=False, relink_material: bool=True) -> list:
+    def import_fbx(arg1: PyActionFamilyNode, file_path: str, lights: bool = True, cameras: bool = True, models: bool = True, normals: bool = True, mesh_animations: bool = True, keep_frame_rate: bool = True, bake_animation: bool = False, object_properties: bool = True, auto_fit: bool = False, unit_to_pixels: float = 10.0, create_media: bool = True, is_udim: bool = False, relink_material: bool = True) -> list:
         """
         Import an FBX file into the GMask Tracer schematic using the GMask Tracer Objects mode.
         Keyword argument:
@@ -1698,7 +1698,7 @@ class PyGMaskTracerNode(PyActionFamilyNode):
         """
         ...
 
-    def read_abc(arg1: PyActionFamilyNode, file_path: str, lights: bool=True, cameras: bool=True, models: bool=True, normals: bool=True, mesh_animations: bool=True, frame_rate: str='23.976 fps', auto_fit: bool=False, unit_to_pixels: float=10.0, consolidate_geometry: bool=True, create_object_group: bool=False) -> Any:
+    def read_abc(arg1: PyActionFamilyNode, file_path: str, lights: bool = True, cameras: bool = True, models: bool = True, normals: bool = True, mesh_animations: bool = True, frame_rate: str = '23.976 fps', auto_fit: bool = False, unit_to_pixels: float = 10.0, consolidate_geometry: bool = True, create_object_group: bool = False) -> Any:
         """
         Import an Alembic (ABC) file into the GMask Tracer schematic using the Read File mode.
         Keyword argument:
@@ -1706,7 +1706,7 @@ class PyGMaskTracerNode(PyActionFamilyNode):
         """
         ...
 
-    def read_fbx(arg1: PyActionFamilyNode, file_path: str, lights: bool=True, cameras: bool=True, models: bool=True, normals: bool=True, mesh_animations: bool=True, keep_frame_rate: bool=True, bake_animation: bool=False, object_properties: bool=True, auto_fit: bool=False, unit_to_pixels: float=10.0, is_udim: bool=False, relink_material: bool=True) -> Any:
+    def read_fbx(arg1: PyActionFamilyNode, file_path: str, lights: bool = True, cameras: bool = True, models: bool = True, normals: bool = True, mesh_animations: bool = True, keep_frame_rate: bool = True, bake_animation: bool = False, object_properties: bool = True, auto_fit: bool = False, unit_to_pixels: float = 10.0, is_udim: bool = False, relink_material: bool = True) -> Any:
         """
         Import an FBX file into the GMask Tracer schematic using the Read File mode.
         Keyword argument:
@@ -1720,7 +1720,7 @@ class PyGMaskTracerNode(PyActionFamilyNode):
         """
         ...
 
-    def set_context(arg1: PyNode, index: int, socket_name: str='Default') -> bool:
+    def set_context(arg1: PyNode, index: int, socket_name: str = 'Default') -> bool:
         """
         Set a Context view on a Node socket. An index and a socket name must be defined as arguments.
         """
@@ -1748,25 +1748,25 @@ class PyHDRNode(PyNode):
     def __setattr__(arg1: PyFlameObject, arg2: str, arg3: Any) -> None:
         ...
 
-    def analyze(arg1: PyHDRNode, analyze_mode: str='Current Shot') -> None:
+    def analyze(arg1: PyHDRNode, analyze_mode: str = 'Current Shot') -> None:
         """
         Perform HDR analysis.
         """
         ...
 
-    def delete(arg1: PyFlameObject, confirm: bool=True) -> bool:
+    def delete(arg1: PyFlameObject, confirm: bool = True) -> bool:
         """
         Delete the node.
         """
         ...
 
-    def duplicate(arg1: PyNode, keep_node_connections: bool=False) -> Any:
+    def duplicate(arg1: PyNode, keep_node_connections: bool = False) -> Any:
         """
         Duplicate the node.
         """
         ...
 
-    def export_DolbyVision_xml(arg1: PyHDRNode, file_name: str, comment: str='') -> None:
+    def export_DolbyVision_xml(arg1: PyHDRNode, file_name: str, comment: str = '') -> None:
         """
         Export the current HDR to a Dolby Vision XML file.
         """
@@ -1778,7 +1778,7 @@ class PyHDRNode(PyNode):
         """
         ...
 
-    def import_DolbyVision_xml(arg1: PyHDRNode, file_name: str, mode: str='Include Frame Based Transitions Trims', shot_idx: int=0) -> None:
+    def import_DolbyVision_xml(arg1: PyHDRNode, file_name: str, mode: str = 'Include Frame Based Transitions Trims', shot_idx: int = 0) -> None:
         """
         Import the current HDR from a Dolby Vision XML file.
         """
@@ -1826,7 +1826,7 @@ class PyHDRNode(PyNode):
         """
         ...
 
-    def set_context(arg1: PyNode, index: int, socket_name: str='Default') -> bool:
+    def set_context(arg1: PyNode, index: int, socket_name: str = 'Default') -> bool:
         """
         Set a Context view on a Node socket. An index and a socket name must be defined as arguments.
         """
@@ -1853,13 +1853,13 @@ class PyHDRTimelineFX(PyTimelineFX):
     def __setattr__(arg1: PyFlameObject, arg2: str, arg3: Any) -> None:
         ...
 
-    def analyze(arg1: PyHDRTimelineFX, analyze_mode: str='Current Shot') -> None:
+    def analyze(arg1: PyHDRTimelineFX, analyze_mode: str = 'Current Shot') -> None:
         """
         Perform HDR analysis.
         """
         ...
 
-    def export_DolbyVision_xml(arg1: PyHDRTimelineFX, file_name: str, shot_only: bool=False, comment: str='') -> None:
+    def export_DolbyVision_xml(arg1: PyHDRTimelineFX, file_name: str, shot_only: bool = False, comment: str = '') -> None:
         """
         Export the current HDR to a Dolby Vision XML file.
         """
@@ -1877,7 +1877,7 @@ class PyHDRTimelineFX(PyTimelineFX):
         """
         ...
 
-    def import_DolbyVision_xml(arg1: PyHDRTimelineFX, file_name: str, mode: str='Include Frame Based Transitions Trims', shot_idx: int=0) -> None:
+    def import_DolbyVision_xml(arg1: PyHDRTimelineFX, file_name: str, mode: str = 'Include Frame Based Transitions Trims', shot_idx: int = 0) -> None:
         """
         Import the current HDR from a Dolby Vision XML file.
         """
@@ -1977,7 +1977,7 @@ class PyImageNode(PyActionFamilyNode):
         """
         ...
 
-    def connect_nodes(arg1: PyActionFamilyNode, parent_node: PyFlameObject, child_node: PyFlameObject, link_type: str='Default') -> bool:
+    def connect_nodes(arg1: PyActionFamilyNode, parent_node: PyFlameObject, child_node: PyFlameObject, link_type: str = 'Default') -> bool:
         """
         Connect two nodes in the Action/Image/GMaskTracer schematic.
         Keyword argument:
@@ -1985,7 +1985,7 @@ class PyImageNode(PyActionFamilyNode):
         """
         ...
 
-    def create_node(arg1: PyActionFamilyNode, node_type: str, file_path: str='', is_udim: bool=False, tile_resolution: int=0) -> Any:
+    def create_node(arg1: PyActionFamilyNode, node_type: str, file_path: str = '', is_udim: bool = False, tile_resolution: int = 0) -> Any:
         """
         Add an Action/Image/GMaskTracer object node to the Action/Image/GMaskTracer schematic.
         Keyword argument:
@@ -1993,13 +1993,13 @@ class PyImageNode(PyActionFamilyNode):
         """
         ...
 
-    def delete(arg1: PyFlameObject, confirm: bool=True) -> bool:
+    def delete(arg1: PyFlameObject, confirm: bool = True) -> bool:
         """
         Delete the node.
         """
         ...
 
-    def disconnect_nodes(arg1: PyActionFamilyNode, parent_node: PyFlameObject, child_node: PyFlameObject, link_type: str='Default') -> bool:
+    def disconnect_nodes(arg1: PyActionFamilyNode, parent_node: PyFlameObject, child_node: PyFlameObject, link_type: str = 'Default') -> bool:
         """
         Disconnect two nodes in the Action/Image/GMaskTracer schematic.
         Keyword argument:
@@ -2007,7 +2007,7 @@ class PyImageNode(PyActionFamilyNode):
         """
         ...
 
-    def duplicate(arg1: PyNode, keep_node_connections: bool=False) -> Any:
+    def duplicate(arg1: PyNode, keep_node_connections: bool = False) -> Any:
         """
         Duplicate the node.
         """
@@ -2046,7 +2046,7 @@ class PyImageNode(PyActionFamilyNode):
         """
         ...
 
-    def set_context(arg1: PyNode, index: int, socket_name: str='Default') -> bool:
+    def set_context(arg1: PyNode, index: int, socket_name: str = 'Default') -> bool:
         """
         Set a Context view on a Node socket. An index and a socket name must be defined as arguments.
         """
@@ -2082,7 +2082,7 @@ class PyLibrary(PyArchiveEntry):
         """
         ...
 
-    def clear(arg1: PyLibrary, confirm: bool=True) -> bool:
+    def clear(arg1: PyLibrary, confirm: bool = True) -> bool:
         """
         Clear the Library's contents.
         """
@@ -2124,7 +2124,7 @@ class PyLibrary(PyArchiveEntry):
         """
         ...
 
-    def create_sequence(arg1: PyLibrary, name: str='Untitled Sequence', video_tracks: int=1, video_stereo: bool=False, width: int=1920, height: int=1080, ratio: float=1.7777777777777777, bit_depth: int=16, scan_mode: str='P', frame_rate: str='23.976 fps', start_at: Any=..., duration: Any=..., audio_tracks: int=1, audio_stereo: bool=True) -> Any:
+    def create_sequence(arg1: PyLibrary, name: str = 'Untitled Sequence', video_tracks: int = 1, video_stereo: bool = False, width: int = 0, height: int = 0, ratio: float = 1.7777777777777777, bit_depth: int = 0, scan_mode: str = '', frame_rate: str = '???', start_at: Any = '00:00:00+00', duration: Any = '00:00:00+01', audio_tracks: int = 1, audio_stereo: bool = True) -> Any:
         """
         Create a Sequence in a PyReel, PyLibrary, PyFolder.
         Keywords arguments:
@@ -2279,7 +2279,7 @@ class PyMediaHubFilesTab(PyMediaHubTab):
         """
         ...
 
-    def set_path(arg1: PyMediaHubTab, arg2: str, allow_partial_success: bool=False) -> bool:
+    def set_path(arg1: PyMediaHubTab, arg2: str, allow_partial_success: bool = False) -> bool:
         """
         Set the MediaHub tab current path. If allow_partial_success is True, the path will be set to the last valid folder in the path.
         """
@@ -2404,7 +2404,7 @@ class PyMediaHubTab:
         """
         ...
 
-    def set_path(arg1: PyMediaHubTab, arg2: str, allow_partial_success: bool=False) -> bool:
+    def set_path(arg1: PyMediaHubTab, arg2: str, allow_partial_success: bool = False) -> bool:
         """
         Set the MediaHub tab current path. If allow_partial_success is True, the path will be set to the last valid folder in the path.
         """
@@ -2421,7 +2421,7 @@ class PyMediaPanel:
     selected_entries = ...
     visible = ...
 
-    def copy(arg1: PyMediaPanel, source_entries: Any, destination: Any, duplicate_action: str='add') -> Any:
+    def copy(arg1: PyMediaPanel, source_entries: Any, destination: Any, duplicate_action: str = 'add') -> Any:
         """
         Copy a PyObject or a list of PyObjects from the Media Panel to a destination inside the Media Panel.Return a list of the copied PyObjects.Keyword arguments:
         source_entries -- The PyObject or list of PyObjects to copy.
@@ -2430,7 +2430,7 @@ class PyMediaPanel:
         """
         ...
 
-    def move(arg1: PyMediaPanel, source_entries: Any, destination: Any, duplicate_action: str='add') -> Any:
+    def move(arg1: PyMediaPanel, source_entries: Any, destination: Any, duplicate_action: str = 'add') -> Any:
         """
         Move a PyObject or a list of PyObjects from the Media Panel to a destination inside the Media Panel.
         Return a list of the moved PyObjects.
@@ -2453,7 +2453,7 @@ class PyMessages:
         """
         ...
 
-    def show_in_console(arg1: PyMessages, message: str, type: str='info', duration: int=-1) -> None:
+    def show_in_console(arg1: PyMessages, message: str, type: str = 'info', duration: int = -1) -> None:
         """
         Display an informative message in application message bar.
         message -- Message string to display.
@@ -2462,7 +2462,7 @@ class PyMessages:
         """
         ...
 
-    def show_in_dialog(arg1: PyMessages, title: str, message: str, type: str, buttons: list, cancel_button: str='') -> str:
+    def show_in_dialog(arg1: PyMessages, title: str, message: str, type: str, buttons: list, cancel_button: str = '') -> str:
         """
         Display a custom dialog with a selection of options.
         Keywords argument:
@@ -2491,13 +2491,13 @@ class PyNode(PyFlameObject):
     def __setattr__(arg1: PyFlameObject, arg2: str, arg3: Any) -> None:
         ...
 
-    def delete(arg1: PyFlameObject, confirm: bool=True) -> bool:
+    def delete(arg1: PyFlameObject, confirm: bool = True) -> bool:
         """
         Delete the node.
         """
         ...
 
-    def duplicate(arg1: PyNode, keep_node_connections: bool=False) -> Any:
+    def duplicate(arg1: PyNode, keep_node_connections: bool = False) -> Any:
         """
         Duplicate the node.
         """
@@ -2515,7 +2515,7 @@ class PyNode(PyFlameObject):
         """
         ...
 
-    def set_context(arg1: PyNode, index: int, socket_name: str='Default') -> bool:
+    def set_context(arg1: PyNode, index: int, socket_name: str = 'Default') -> bool:
         """
         Set a Context view on a Node socket. An index and a socket name must be defined as arguments.
         """
@@ -2544,13 +2544,13 @@ class PyOFXNode(PyNode):
         """
         ...
 
-    def delete(arg1: PyFlameObject, confirm: bool=True) -> bool:
+    def delete(arg1: PyFlameObject, confirm: bool = True) -> bool:
         """
         Delete the node.
         """
         ...
 
-    def duplicate(arg1: PyNode, keep_node_connections: bool=False) -> Any:
+    def duplicate(arg1: PyNode, keep_node_connections: bool = False) -> Any:
         """
         Duplicate the node.
         """
@@ -2568,7 +2568,7 @@ class PyOFXNode(PyNode):
         """
         ...
 
-    def set_context(arg1: PyNode, index: int, socket_name: str='Default') -> bool:
+    def set_context(arg1: PyNode, index: int, socket_name: str = 'Default') -> bool:
         """
         Set a Context view on a Node socket. An index and a socket name must be defined as arguments.
         """
@@ -2597,13 +2597,13 @@ class PyPaintNode(PyNode):
         """
         ...
 
-    def delete(arg1: PyFlameObject, confirm: bool=True) -> bool:
+    def delete(arg1: PyFlameObject, confirm: bool = True) -> bool:
         """
         Delete the node.
         """
         ...
 
-    def duplicate(arg1: PyNode, keep_node_connections: bool=False) -> Any:
+    def duplicate(arg1: PyNode, keep_node_connections: bool = False) -> Any:
         """
         Duplicate the node.
         """
@@ -2621,7 +2621,7 @@ class PyPaintNode(PyNode):
         """
         ...
 
-    def set_context(arg1: PyNode, index: int, socket_name: str='Default') -> bool:
+    def set_context(arg1: PyNode, index: int, socket_name: str = 'Default') -> bool:
         """
         Set a Context view on a Node socket. An index and a socket name must be defined as arguments.
         """
@@ -2708,7 +2708,7 @@ class PyReel(PyArchiveEntry):
     def __setattr__(arg1: PyFlameObject, arg2: str, arg3: Any) -> None:
         ...
 
-    def clear(arg1: PyReel, confirm: bool=True) -> bool:
+    def clear(arg1: PyReel, confirm: bool = True) -> bool:
         """
         Clear the Reel content.
         """
@@ -2726,7 +2726,7 @@ class PyReel(PyArchiveEntry):
         """
         ...
 
-    def create_sequence(arg1: PyReel, name: str='Untitled Sequence', video_tracks: int=1, video_stereo: bool=False, width: int=1920, height: int=1080, ratio: float=1.7777777777777777, bit_depth: int=16, scan_mode: str='P', frame_rate: str='23.976 fps', start_at: Any=..., duration: Any=..., audio_tracks: int=1, audio_stereo: bool=True) -> Any:
+    def create_sequence(arg1: PyReel, name: str = 'Untitled Sequence', video_tracks: int = 1, video_stereo: bool = False, width: int = 0, height: int = 0, ratio: float = 1.7777777777777777, bit_depth: int = 0, scan_mode: str = '', frame_rate: str = '???', start_at: Any = '00:00:00+00', duration: Any = '00:00:00+01', audio_tracks: int = 1, audio_stereo: bool = True) -> Any:
         """
         Create a Sequence in a PyReel, PyLibrary, PyFolder.
         Keywords arguments:
@@ -2778,7 +2778,7 @@ class PyReelGroup(PyArchiveEntry):
     def __setattr__(arg1: PyFlameObject, arg2: str, arg3: Any) -> None:
         ...
 
-    def clear(arg1: PyReelGroup, confirm: bool=True) -> bool:
+    def clear(arg1: PyReelGroup, confirm: bool = True) -> bool:
         """
         Clear the Reel Group content.
         """
@@ -2796,7 +2796,7 @@ class PyReelGroup(PyArchiveEntry):
         """
         ...
 
-    def create_reel(arg1: PyReelGroup, name: str, sequence: bool=False) -> Any:
+    def create_reel(arg1: PyReelGroup, name: str, sequence: bool = False) -> Any:
         """
         Create a new Reel inside a Reel Group.
         """
@@ -2838,13 +2838,13 @@ class PyRenderNode(PyNode):
     def __setattr__(arg1: PyFlameObject, arg2: str, arg3: Any) -> None:
         ...
 
-    def delete(arg1: PyFlameObject, confirm: bool=True) -> bool:
+    def delete(arg1: PyFlameObject, confirm: bool = True) -> bool:
         """
         Delete the node.
         """
         ...
 
-    def duplicate(arg1: PyNode, keep_node_connections: bool=False) -> Any:
+    def duplicate(arg1: PyNode, keep_node_connections: bool = False) -> Any:
         """
         Duplicate the node.
         """
@@ -2873,7 +2873,7 @@ class PyRenderNode(PyNode):
         """
         ...
 
-    def set_context(arg1: PyNode, index: int, socket_name: str='Default') -> bool:
+    def set_context(arg1: PyNode, index: int, socket_name: str = 'Default') -> bool:
         """
         Set a Context view on a Node socket. An index and a socket name must be defined as arguments.
         """
@@ -2912,13 +2912,13 @@ class PySearch:
     """
     use_weight = ...
 
-    def activate_search_result(arg1: PySearch, name: str, type: str, tab: str='Tools') -> None:
+    def activate_search_result(arg1: PySearch, name: str, type: str, tab: str = 'Tools') -> None:
         """
         Activate a search result.
         """
         ...
 
-    def search_results(arg1: PySearch, search_str: str='*', tab: str='Tools') -> list:
+    def search_results(arg1: PySearch, search_str: str = '*', tab: str = 'Tools') -> list:
         """
         Search results that match a string.
         """
@@ -2995,7 +2995,7 @@ class PySegment(PyFlameObject):
     def __setattr__(arg1: PyFlameObject, arg2: str, arg3: Any) -> None:
         ...
 
-    def change_start_frame(arg1: PySegment, start_frame: int, use_segment_connections: bool=True) -> None:
+    def change_start_frame(arg1: PySegment, start_frame: int, use_segment_connections: bool = True) -> None:
         """
         Modify the start frame of the segment.
         Keywords argument:
@@ -3010,7 +3010,7 @@ class PySegment(PyFlameObject):
         """
         ...
 
-    def connected_segments(arg1: PySegment, scoping: str='all reels') -> Any:
+    def connected_segments(arg1: PySegment, scoping: str = 'all reels') -> Any:
         """
         Return a list of the connected segments.
         Keywords argument:
@@ -3019,7 +3019,7 @@ class PySegment(PyFlameObject):
         """
         ...
 
-    def copy_to_media_panel(arg1: PySegment, destination: PyArchiveEntry, duplicate_action: str='add') -> Any:
+    def copy_to_media_panel(arg1: PySegment, destination: PyArchiveEntry, duplicate_action: str = 'add') -> Any:
         """
         Create a new clip with a copy of the PyObject.
         """
@@ -3031,7 +3031,7 @@ class PySegment(PyFlameObject):
         """
         ...
 
-    def create_effect(arg1: PySegment, effect_type: str, after_effect_type: str='') -> Any:
+    def create_effect(arg1: PySegment, effect_type: str, after_effect_type: str = '') -> Any:
         """
         Add an effect of effect_type on the Segment.
         after_effect_type can be specified to insert the effect at a specific position.
@@ -3044,7 +3044,7 @@ class PySegment(PyFlameObject):
         """
         ...
 
-    def create_unlinked_segment(arg1: PySegment, source_name: str='', tape_name: str='', start_time: Any=0, source_duration: Any=0, head: Any=0, file_path: str='', source_audio_track: int=1, width: int=0, height: int=0, ratio: float=0.0, bit_depth: int=0, scan_mode: str='Same As Sequence', frame_rate: str='Same As Sequence') -> None:
+    def create_unlinked_segment(arg1: PySegment, source_name: str = '', tape_name: str = '', start_time: Any = 0, source_duration: Any = 0, head: Any = 0, file_path: str = '', source_audio_track: int = 1, width: int = 0, height: int = 0, ratio: float = 0.0, bit_depth: int = 0, scan_mode: str = 'Same As Sequence', frame_rate: str = 'Same As Sequence') -> None:
         """
         Replace the gap with an unlinked source media segment.
         Keywords argument:
@@ -3070,13 +3070,13 @@ class PySegment(PyFlameObject):
         """
         ...
 
-    def get_colour_space(arg1: PySegment, time: PyTime=None) -> str:
+    def get_colour_space(arg1: PySegment, time: PyTime = None) -> str:
         """
         Return the colour space at the requested time. Use record_in when no time is supplied.
         """
         ...
 
-    def match(arg1: PySegment, destination: PyArchiveEntry, preserve_handle: bool=False, use_sequence_info: bool=True, include_nested_content: bool=False, include_timeline_fx: bool=False) -> Any:
+    def match(arg1: PySegment, destination: PyArchiveEntry, preserve_handle: bool = False, use_sequence_info: bool = True, include_nested_content: bool = False, include_timeline_fx: bool = False) -> Any:
         """
         Match out the media of the PySegment to the destination.
         Returns a PyClip or a list of PyClip (with the included_nested_content option).
@@ -3095,7 +3095,7 @@ class PySegment(PyFlameObject):
         """
         ...
 
-    def set_gap_bars(arg1: PySegment, type: str='smpte', full_luminance: bool=False, softness: float=0.0) -> Any:
+    def set_gap_bars(arg1: PySegment, type: str = 'smpte', full_luminance: bool = False, softness: float = 0.0) -> Any:
         """
         Create colour bars segment for the duration of the gap.
         Returns a new PySegment on success.
@@ -3106,13 +3106,13 @@ class PySegment(PyFlameObject):
         """
         ...
 
-    def set_gap_colour(arg1: PySegment, r: float=0.0, g: float=0.0, b: float=0.0) -> None:
+    def set_gap_colour(arg1: PySegment, r: float = 0.0, g: float = 0.0, b: float = 0.0) -> None:
         """
         Create a colour source segment for the duration of the gap, or set the colour of an existing colour source.
         """
         ...
 
-    def set_matte_channel(arg1: PySegment, channel_name: str='', channel_index: int=-1, scope: str='Follow Preferences', matte_mode: str='Custom Matte') -> bool:
+    def set_matte_channel(arg1: PySegment, channel_name: str = '', channel_index: int = -1, scope: str = 'Follow Preferences', matte_mode: str = 'Custom Matte') -> bool:
         """
         Set the Matte channel of the source specified by channel_index or by channel_name if the matte_mode is set to Custom Matte.
         Keywords argument:
@@ -3123,7 +3123,7 @@ class PySegment(PyFlameObject):
         """
         ...
 
-    def set_rgb_channel(arg1: PySegment, channel_name: str='', channel_index: int=-1, scope: str='Follow Preferences') -> bool:
+    def set_rgb_channel(arg1: PySegment, channel_name: str = '', channel_index: int = -1, scope: str = 'Follow Preferences') -> bool:
         """
         Set the RGB channel of the source specified by channel_index or by channel_name
         Keywords argument:
@@ -3139,7 +3139,7 @@ class PySegment(PyFlameObject):
         """
         ...
 
-    def slide_keyframes(arg1: PySegment, offset: int, sync: bool=False) -> bool:
+    def slide_keyframes(arg1: PySegment, offset: int, sync: bool = False) -> bool:
         """
         Slide the keyframes the PySegment.
         Keywords argument:
@@ -3148,7 +3148,7 @@ class PySegment(PyFlameObject):
         """
         ...
 
-    def slip(arg1: PySegment, offset: int, sync: bool=False, keyframes_move_mode: str='Shift') -> bool:
+    def slip(arg1: PySegment, offset: int, sync: bool = False, keyframes_move_mode: str = 'Shift') -> bool:
         """
         Slip the media of the PySegment.
         Keywords argument:
@@ -3176,7 +3176,7 @@ class PySegment(PyFlameObject):
         """
         ...
 
-    def trim_head(arg1: PySegment, offset: int, ripple: bool=False, sync: bool=False, keyframes_move_mode: str='Shift') -> bool:
+    def trim_head(arg1: PySegment, offset: int, ripple: bool = False, sync: bool = False, keyframes_move_mode: str = 'Shift') -> bool:
         """
         Modify the amount of head of the PySegment.
         Keywords argument:
@@ -3187,7 +3187,7 @@ class PySegment(PyFlameObject):
         """
         ...
 
-    def trim_tail(arg1: PySegment, offset: int, ripple: bool=False, sync: bool=False, keyframes_move_mode: str='Shift') -> bool:
+    def trim_tail(arg1: PySegment, offset: int, ripple: bool = False, sync: bool = False, keyframes_move_mode: str = 'Shift') -> bool:
         """
         Modify the amount of tail of the PySegment.
         Keywords argument:
@@ -3240,7 +3240,7 @@ class PySequence(PyClip):
     def __setattr__(arg1: PyFlameObject, arg2: str, arg3: Any) -> None:
         ...
 
-    def cache_media(arg1: PyClip, mode: str='current') -> bool:
+    def cache_media(arg1: PyClip, mode: str = 'current') -> bool:
         """
         Cache the Clip's linked media.
         Keyword argument:
@@ -3256,7 +3256,7 @@ class PySequence(PyClip):
         """
         ...
 
-    def change_start_frame(arg1: PyClip, start_frame: int, use_segment_connections: bool=True) -> None:
+    def change_start_frame(arg1: PyClip, start_frame: int, use_segment_connections: bool = True) -> None:
         """
         Modify the start frame of a source Clip.
         Keywords argument:
@@ -3283,7 +3283,7 @@ class PySequence(PyClip):
         """
         ...
 
-    def copy_selection_to_media_panel(arg1: PySequence, destination: PyArchiveEntry, duplicate_action: str='add') -> Any:
+    def copy_selection_to_media_panel(arg1: PySequence, destination: PyArchiveEntry, duplicate_action: str = 'add') -> Any:
         """
         Create a new clip by copying the currently selected segments.
         Return the new PyClip.
@@ -3293,7 +3293,7 @@ class PySequence(PyClip):
         """
         ...
 
-    def create_audio(arg1: PySequence, stereo: bool=False) -> Any:
+    def create_audio(arg1: PySequence, stereo: bool = False) -> Any:
         """
         Add an Audio Track to the Sequence.
         """
@@ -3325,7 +3325,7 @@ class PySequence(PyClip):
         """
         ...
 
-    def create_version(arg1: PySequence, stereo: bool=False) -> Any:
+    def create_version(arg1: PySequence, stereo: bool = False) -> Any:
         """
         Add a Version to the Sequence.
         """
@@ -3337,7 +3337,7 @@ class PySequence(PyClip):
         """
         ...
 
-    def extract_selection_to_media_panel(arg1: PySequence, destination: PyArchiveEntry=None, duplicate_action: str='add') -> Any:
+    def extract_selection_to_media_panel(arg1: PySequence, destination: PyArchiveEntry = None, duplicate_action: str = 'add') -> Any:
         """
         Extract the selection from the sequence.
         Return the new PyClip created from the selection when a destination is supplied.
@@ -3347,7 +3347,7 @@ class PySequence(PyClip):
         """
         ...
 
-    def flush_cache_media(arg1: PyClip, mode: str='current') -> bool:
+    def flush_cache_media(arg1: PyClip, mode: str = 'current') -> bool:
         """
         Flush the Clip's media cache.
         Keyword argument:
@@ -3361,7 +3361,7 @@ class PySequence(PyClip):
         """
         ...
 
-    def get_colour_space(arg1: PyClip, time: PyTime=None) -> str:
+    def get_colour_space(arg1: PyClip, time: PyTime = None) -> str:
         """
         Return the colour space at the requested time. Use current_time when no time is supplied.
         """
@@ -3379,7 +3379,7 @@ class PySequence(PyClip):
         """
         ...
 
-    def import_subtitles_file(arg1: PySequence, file_name: str, file_type: Any=None, align_first_event_to_clip_start: bool=False, convert_from_frame_rate: Any=None) -> Any:
+    def import_subtitles_file(arg1: PySequence, file_name: str, file_type: Any = None, align_first_event_to_clip_start: bool = False, convert_from_frame_rate: Any = None) -> Any:
         """
         Import a subtitles file into a new Subtitles Track.
         Return the new PySubtitleTrack.
@@ -3391,21 +3391,21 @@ class PySequence(PyClip):
         """
         ...
 
-    def insert(arg1: PySequence, source_clip: PyClip, insert_time: PyTime=None, destination_track: PyTrack=None) -> bool:
+    def insert(arg1: PySequence, source_clip: PyClip, insert_time: PyTime = None, destination_track: PyTrack = None) -> bool:
         """
         Creates a new PySequenceGroup.
         The group name must be supplied as argument.
         """
         ...
 
-    def is_rendered(arg1: PyClip, top_only: bool=False, render_quality: str='Full Resolution') -> bool:
+    def is_rendered(arg1: PyClip, top_only: bool = False, render_quality: str = 'Full Resolution') -> bool:
         """
         Return if a Clip is rendered.
         The following attributes can be defined: top_only, render_quality.
         """
         ...
 
-    def lift_selection_to_media_panel(arg1: PySequence, destination: PyArchiveEntry=None, duplicate_action: str='add') -> Any:
+    def lift_selection_to_media_panel(arg1: PySequence, destination: PyArchiveEntry = None, duplicate_action: str = 'add') -> Any:
         """
         Lift the selection from the sequence.
         Return the new PyClip created from the selection when a destination is supplied.
@@ -3433,14 +3433,14 @@ class PySequence(PyClip):
         """
         ...
 
-    def overwrite(arg1: PySequence, source_clip: PyClip, overwrite_time: PyTime=None, destination_track: PyTrack=None) -> bool:
+    def overwrite(arg1: PySequence, source_clip: PyClip, overwrite_time: PyTime = None, destination_track: PyTrack = None) -> bool:
         """
         Creates a new PySequenceGroup.
         The group name must be supplied as argument.
         """
         ...
 
-    def reformat(arg1: PyClip, width: int=0, height: int=0, ratio: float=0.0, bit_depth: int=0, scan_mode: str='', frame_rate: str='', resize_mode: str='Letterbox') -> None:
+    def reformat(arg1: PyClip, width: int = 0, height: int = 0, ratio: float = 0.0, bit_depth: int = 0, scan_mode: str = '', frame_rate: str = '', resize_mode: str = 'Letterbox') -> None:
         """
         Reformat the Clip to the specified format.
         Keywords arguments:
@@ -3454,7 +3454,7 @@ class PySequence(PyClip):
         """
         ...
 
-    def render(arg1: PyClip, render_mode: str='All', render_option: str='Foreground', render_quality: str='Full Resolution', effect_type: str='', effect_caching_mode: str='Current', include_handles: bool=False) -> bool:
+    def render(arg1: PyClip, render_mode: str = 'All', render_option: str = 'Foreground', render_quality: str = 'Full Resolution', effect_type: str = '', effect_caching_mode: str = 'Current', include_handles: bool = False) -> bool:
         """
         Trigger a render of the Clip
         The following attributes can be defined: render_mode, render_option, render_quality, effect_type, effect_caching_mode and include_handles.
@@ -3510,19 +3510,19 @@ class PySubtitleTrack(PyTrack):
     def __setattr__(arg1: PyFlameObject, arg2: str, arg3: Any) -> None:
         ...
 
-    def copy_to_media_panel(arg1: PyTrack, destination: PyArchiveEntry, duplicate_action: str='add') -> Any:
+    def copy_to_media_panel(arg1: PyTrack, destination: PyArchiveEntry, duplicate_action: str = 'add') -> Any:
         """
         Create a new clip with a copy of the PyObject.
         """
         ...
 
-    def cut(arg1: PyTrack, cut_time: PyTime, sync: bool=False) -> None:
+    def cut(arg1: PyTrack, cut_time: PyTime, sync: bool = False) -> None:
         """
         Cut the Track.
         """
         ...
 
-    def export_as_srt_file(arg1: PySubtitleTrack, file_name: str, character_based_attributes: bool=True, export_colours: bool=False, exclude_colour: str='', use_original_colours: bool=False, use_original_alignment: bool=False, export_alignments: bool=False, alignment_type: str='an', exclude_alignment: str='', start_timecode: str='Same as Clip') -> None:
+    def export_as_srt_file(arg1: PySubtitleTrack, file_name: str, character_based_attributes: bool = True, export_colours: bool = False, exclude_colour: str = '', use_original_colours: bool = False, use_original_alignment: bool = False, export_alignments: bool = False, alignment_type: str = 'an', exclude_alignment: str = '', start_timecode: str = 'Same as Clip') -> None:
         """
         Export the Subtitles Track as a SubRip (srt) file.Keyword arguments:
         file_name -- The path and name of the file to write.
@@ -3538,7 +3538,7 @@ class PySubtitleTrack(PyTrack):
         """
         ...
 
-    def insert_transition(arg1: PyTrack, record_time: PyTime, type: str, duration: int=10, alignment: str='Centred', in_offset: int=0, sync: bool=False) -> Any:
+    def insert_transition(arg1: PyTrack, record_time: PyTime, type: str, duration: int = 10, alignment: str = 'Centred', in_offset: int = 0, sync: bool = False) -> Any:
         """
         Insert a Transition on the Track.
         Returns the new PyTransition if successful.
@@ -3694,19 +3694,19 @@ class PyTrack(PyFlameObject):
     def __setattr__(arg1: PyFlameObject, arg2: str, arg3: Any) -> None:
         ...
 
-    def copy_to_media_panel(arg1: PyTrack, destination: PyArchiveEntry, duplicate_action: str='add') -> Any:
+    def copy_to_media_panel(arg1: PyTrack, destination: PyArchiveEntry, duplicate_action: str = 'add') -> Any:
         """
         Create a new clip with a copy of the PyObject.
         """
         ...
 
-    def cut(arg1: PyTrack, cut_time: PyTime, sync: bool=False) -> None:
+    def cut(arg1: PyTrack, cut_time: PyTime, sync: bool = False) -> None:
         """
         Cut the Track.
         """
         ...
 
-    def insert_transition(arg1: PyTrack, record_time: PyTime, type: str, duration: int=10, alignment: str='Centred', in_offset: int=0, sync: bool=False) -> Any:
+    def insert_transition(arg1: PyTrack, record_time: PyTime, type: str, duration: int = 10, alignment: str = 'Centred', in_offset: int = 0, sync: bool = False) -> Any:
         """
         Insert a Transition on the Track.
         Returns the new PyTransition if successful.
@@ -3737,7 +3737,7 @@ class PyTransition(PyFlameObject):
     def __setattr__(arg1: PyFlameObject, arg2: str, arg3: Any) -> None:
         ...
 
-    def set_dissolve_to_from_colour(arg1: PyTransition, r: float=0.0, g: float=0.0, b: float=0.0) -> None:
+    def set_dissolve_to_from_colour(arg1: PyTransition, r: float = 0.0, g: float = 0.0, b: float = 0.0) -> None:
         """
         Make a dissolve transition dissolve to/from a colour.
         """
@@ -3749,7 +3749,7 @@ class PyTransition(PyFlameObject):
         """
         ...
 
-    def set_transition(arg1: PyTransition, type: str, duration: int=10, alignment: str='Centred', in_offset: int=0) -> Any:
+    def set_transition(arg1: PyTransition, type: str, duration: int = 10, alignment: str = 'Centred', in_offset: int = 0) -> Any:
         """
         Replace the Transition with another type of Transition.
         Returns the new PyTransition if successful.
@@ -3761,7 +3761,7 @@ class PyTransition(PyFlameObject):
         """
         ...
 
-    def slide(arg1: PyTransition, offset: int, sync: bool=False) -> bool:
+    def slide(arg1: PyTransition, offset: int, sync: bool = False) -> bool:
         """
         Slide the Transition.
         Keywords argument:
@@ -3801,13 +3801,13 @@ class PyVersion(PyFlameObject):
     def __setattr__(arg1: PyFlameObject, arg2: str, arg3: Any) -> None:
         ...
 
-    def copy_to_media_panel(arg1: PyVersion, destination: PyArchiveEntry, duplicate_action: str='add') -> Any:
+    def copy_to_media_panel(arg1: PyVersion, destination: PyArchiveEntry, duplicate_action: str = 'add') -> Any:
         """
         Create a new clip with a copy of the PyObject.
         """
         ...
 
-    def create_track(arg1: PyVersion, track_index: int=-1, hdr: bool=False) -> Any:
+    def create_track(arg1: PyVersion, track_index: int = -1, hdr: bool = False) -> Any:
         """
         Add a track to the Version.Keywords arguments:
         track_index -- Index to insert the new track at, -1 to append at the top.
@@ -3815,7 +3815,7 @@ class PyVersion(PyFlameObject):
         """
         ...
 
-    def import_DolbyVision_xml(arg1: PyVersion, file_name: str, mode: str='Include Frame Based Transitions Trims', track_index: int=-1) -> Any:
+    def import_DolbyVision_xml(arg1: PyVersion, file_name: str, mode: str = 'Include Frame Based Transitions Trims', track_index: int = -1) -> Any:
         """
         Add a track to the Version.Keywords arguments:
         track_index -- Index to insert the new track at, -1 to append at the top.
@@ -3875,13 +3875,13 @@ class PyWorkspace(PyArchiveEntry):
         """
         ...
 
-    def set_desktop_reels(arg1: PyWorkspace, group: Any=None) -> bool:
+    def set_desktop_reels(arg1: PyWorkspace, group: Any = None) -> bool:
         """
         Set the Desktop Reels view mode.
         """
         ...
 
-    def set_freeform(arg1: PyWorkspace, reel: Any=None) -> bool:
+    def set_freeform(arg1: PyWorkspace, reel: Any = None) -> bool:
         """
         Set the Freeform view mode.
         """
@@ -3905,19 +3905,19 @@ class PyWriteFileNode(PyRenderNode):
     def __setattr__(arg1: PyFlameObject, arg2: str, arg3: Any) -> None:
         ...
 
-    def delete(arg1: PyFlameObject, confirm: bool=True) -> bool:
+    def delete(arg1: PyFlameObject, confirm: bool = True) -> bool:
         """
         Delete the node.
         """
         ...
 
-    def duplicate(arg1: PyNode, keep_node_connections: bool=False) -> Any:
+    def duplicate(arg1: PyNode, keep_node_connections: bool = False) -> Any:
         """
         Duplicate the node.
         """
         ...
 
-    def get_resolved_media_path(arg1: PyWriteFileNode, show_extension: bool=True, translate_path: bool=True, frame: Any=None) -> Any:
+    def get_resolved_media_path(arg1: PyWriteFileNode, show_extension: bool = True, translate_path: bool = True, frame: Any = None) -> Any:
         """
         Return the resolved media path.
         Keyword arguments:
@@ -3950,14 +3950,14 @@ class PyWriteFileNode(PyRenderNode):
         """
         ...
 
-    def set_context(arg1: PyNode, index: int, socket_name: str='Default') -> bool:
+    def set_context(arg1: PyNode, index: int, socket_name: str = 'Default') -> bool:
         """
         Set a Context view on a Node socket. An index and a socket name must be defined as arguments.
         """
         ...
 
 
-class BuiltinImporter(object):
+class BuiltinImporter:
     """
     Meta path import for built-in modules.
 
@@ -3967,32 +3967,32 @@ class BuiltinImporter(object):
     ...
 
 
-def delete(object: PyFlameObject, confirm: bool=True) -> bool:
+def delete(object: PyFlameObject, confirm: bool = True) -> bool:
     """
     Delete the target object.
     """
     ...
 
-def duplicate(object: PyFlameObject, keep_node_connections: bool=False) -> Any:
+def duplicate(object: PyFlameObject, keep_node_connections: bool = False) -> Any:
     """
     Duplicate the target object.
     """
     ...
 
-def duplicate_many(object_list: list, keep_node_connections: bool=False) -> list:
+def duplicate_many(object_list: list, keep_node_connections: bool = False) -> list:
     """
     Duplicate the target objects.
     """
     ...
 
-def execute_command(command: str, blocking: bool=True, shell: bool=False, capture_stdout: bool=False, capture_stderr: bool=False) -> tuple:
+def execute_command(command: str, blocking: bool = True, shell: bool = False, capture_stdout: bool = False, capture_stderr: bool = False) -> tuple:
     """
     Execute command line through the Autodesk Flame Multi-Purpose Daemon.
     This way of starting new processes is better since any native python
     subprocess command (os.system, subprocess, Popen, etc) will call fork()
     which will duplicate the process memory before calling exec().
      This can be costly especially for a process like Flame.
-    
+
     command -- Command line to execute.
     blocking -- If True, will not return until the command line has completed.
     shell -- Should the command be executed in a sh shell.
@@ -4003,12 +4003,12 @@ def execute_command(command: str, blocking: bool=True, shell: bool=False, captur
     capture_stderr -- If True, stdout of the command will be captured and
                       returned instead of forwarded to the application stderr.
                       Requires blocking=True
-    
+
     Note: Environment variables will not be forwarded to the executed command.
     """
     ...
 
-def execute_shortcut(description: str, update_list: bool=True) -> bool:
+def execute_shortcut(description: str, update_list: bool = True) -> bool:
     """
     Execute the Flame shortcut.
     description  -- The description in the Keyboard Shortcut editor.
@@ -4021,7 +4021,7 @@ def exit() -> None:
     """
     ...
 
-def find_by_name(name: str, parent: Any=None) -> list:
+def find_by_name(name: str, parent: Any = None) -> list:
     """
     Find a Flame object in the Media Panel by name.
     """
@@ -4093,7 +4093,7 @@ def go_to(tab: str) -> bool:
     """
     ...
 
-def import_clips(path: Any, destination: Any=None) -> list:
+def import_clips(path: Any, destination: Any = None) -> list:
     """
     Import one or many clips from a path.
     Keyword arguments:
@@ -4107,7 +4107,7 @@ def import_clips(path: Any, destination: Any=None) -> list:
     """
     ...
 
-def schedule_idle_event(function: Any, delay: int=0) -> None:
+def schedule_idle_event(function: Any, delay: int = 0) -> None:
     """
     Register a function callback that will be called eventually when the application is idle. The function must not block and be quick since it will be executed in the main application thread.
     Keyword arguments:
@@ -4124,7 +4124,7 @@ def set_current_tab(arg1: str) -> bool:
     """
     ...
 
-def set_render_option(render_option: str, render_context: str='') -> bool:
+def set_render_option(render_option: str, render_context: str = '') -> bool:
     """
     Set the default render option.
     Keyword arguments:

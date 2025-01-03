@@ -30,7 +30,7 @@ def sort_key(obj: Any, attr: str) -> tuple:
 
 
 def generate_stub(module, output_dir: str) -> None:
-    output_path = os.path.join(output_dir, f'{module.__name__}.pyi')
+    output_path = os.path.join(output_dir, '__init__.pyi')
 
     with open(output_path, 'w') as f:
         f.write('from typing import Any, overload\n\n\n')
@@ -56,17 +56,21 @@ def decode_attribute(obj: Any, name: str, decode_types: bool = True) -> str:
     if name.startswith('_'):
         return ''
 
+    hint = ''
     if value is None:
         value = 'None'
     elif type(value) in (str, int, float, bool):
         value = repr(value)
     else:
+        type_name = value.__class__.__name__
+        if type_name and type_name[0].isupper():
+            hint = f': {type_name}'
         value = '...'
 
     output = ''
     if inspect.isclass(obj):
         output += '    '
-    output += f'{name} = {value}\n'
+    output += f'{name}{hint} = {value}\n'
     return output
 
 
@@ -107,47 +111,19 @@ def decode_class(cls: type) -> str:
 
 
 def decode_function(obj: Any, func: Callable) -> str:
-    output = ''
-
     if not (doc := func.__doc__):
-        return output
+        return ''
 
     # Signatures
     signatures = []
     matches = re.findall(r'\w+\(.*\)\s*->\s*\w+\s*:?$', doc.strip(), re.MULTILINE)
     for signature in matches:
         doc = doc.replace(signature, '')
-
-        def sub_arg(m: re.Match) -> str:
-            argument = m.group(2)
-            hint = m.group(1).replace('object', 'Any')
-            return f'{argument}: {hint}'
-
-        signature = re.sub(r'\((\w+)\)(\w+)', sub_arg, signature)
-        signature = re.sub(r'->\s*object', '-> Any', signature)
-        signature = re.sub(r'\d+:\d+:\d+:\d+', '...', signature)
-        signature = signature.replace('[]', 'None')
-        signature = signature.replace('[', '').replace(']', '')
-        signature = signature.strip(': \t\n\r')
-
-        # HACK: There are signatures where non-default parameters follow default.
-        if match := re.search(r'\((.*)\)\s*->', signature):
-            args = match.group(1).split(',')
-            fixed_args = []
-            default = False
-            for arg in args:
-                if '=' in arg:
-                    default = True
-                elif default:
-                    arg += ' = None'
-                fixed_args.append(arg.strip())
-
-            args_string = ', '.join(fixed_args)
-            signature = signature.replace(match.group(1), args_string)
-
-        signatures.append(f'def {signature}:\n')
+        signature = format_signature(signature)
+        signatures.append(signature)
 
     # Write
+    output = ''
     doc_string = doc.strip()
 
     for i, signature in enumerate(signatures):
@@ -167,3 +143,70 @@ def decode_function(obj: Any, func: Callable) -> str:
         output = '\n'.join(f'    {line}' if line else '' for line in lines)
 
     return output
+
+
+def decode_value(value: str) -> Any:
+    value = value.strip()
+    if value.lower() == 'none':
+        return
+
+    if value.lower() == 'true':
+        return True
+    if value.lower() == 'false':
+        return False
+
+    try:
+        return int(value)
+    except ValueError:
+        pass
+
+    try:
+        return float(value)
+    except ValueError:
+        pass
+
+    return value.replace('"', '').replace("'", '')
+
+
+def format_signature(signature: str) -> str:
+    signature = signature.replace('[]', 'None')
+    signature = signature.replace('[', '').replace(']', '')
+    signature = signature.strip(': \t\n\r')
+    signature = re.sub(r'(->.*)object', r'\1Any', signature)
+
+    if match := re.search(r'\((.*)\)', signature):
+        # NOTE: Assume that there are no commas in arg defaults
+        args = match.group(1).split(',')
+
+        formatted_args = []
+        is_default = False
+        for arg in args:
+            formatted_arg = arg
+
+            # Format type hints
+            if m := re.search(r'\((\w+)\)(\w+)', formatted_arg):
+                name = m.group(2)
+                hint = m.group(1).replace('object', 'Any')
+                formatted_arg = arg.replace(m.group(0), f'{name}: {hint}')
+
+            # Format default values
+            if m := re.search(r'=\s*(.*)', formatted_arg):
+                is_default = True
+                default = repr(decode_value(m.group(1)))
+            elif is_default:
+                # HACK: There are signatures where non-default parameters follow
+                # default.
+                default = repr(None)
+            else:
+                default = None
+
+            if default is not None:
+                formatted_arg = re.sub(r'(\s*=.*)?$', '', formatted_arg)
+                formatted_arg += f' = {default}'
+
+            formatted_args.append(formatted_arg.strip())
+
+        signature = signature.replace(match.group(1), ', '.join(formatted_args))
+
+    signature = f'def {signature}:\n'
+    return signature
